@@ -1,0 +1,9 @@
+<div class="ui segment">
+    <!--<div class="ui yellow message">
+        <i class="star icon"></i>
+        Não existem tweets.
+    </div>
+     Listagem de tweets-->
+    <app-tweet *ngFor="let item of tweets" [tweet]="item" (likedTweetChild)="handleLikedTweetFromChild($event)"></app-tweet>
+
+</div>
