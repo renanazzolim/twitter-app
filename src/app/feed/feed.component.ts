@@ -1,44 +1,33 @@
+import { FeedService } from './feed.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-feed',
     templateUrl: './feed.component.html',
-    styleUrls: ['./feed.component.css']
+    styleUrls: ['./feed.component.css'],
+    providers: [FeedService]
 })
 export class FeedComponent implements OnInit {
+    // json-server --watch twitter_db.json
+    public tweets: any = [];
 
-    public tweets = [
-        {
-            user: 'stevie',
-            name: 'Stevie Feliciano',
-            body: 'Stevie Feliciano is a library scientist living in New York City. She likes to '
-                + 'spend her time reading, running, and writing.',
-            likes: [],
-            avatar: '../assets/images/avatar/stevie.jpg'
-        },
-        {
-            user: 'veronika',
-            name: 'Veronika Ossi',
-            body: 'Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.',
-            likes: ['jenny', 'stevie'],
-            avatar: '../assets/images/avatar/veronika.jpg'
-        },
-        {
-            user: 'jenny',
-            name: 'Jenny Hess',
-            body: 'Jenny is a student studying Media Management at the New School.',
-            likes: [],
-            avatar: '../assets/images/avatar/jenny.jpg'
-        }
-    ];
+    public likedTweet = undefined;
+    public currentUser = 'stevie';
 
-    constructor() { }
+    constructor(private feedService: FeedService) { }
 
     ngOnInit() {
+        this.feedService.getTeweets().subscribe(data => {
+            this.tweets = data.json();
+        });
     }
 
     public handleLikedTweetFromChild(tweet) {
-        console.log(tweet);
+        tweet.likes.push(this.currentUser);
+        this.feedService.likeTweet(tweet).subscribe(data => {
+            console.log(data.json());
+        });
     }
+
 
 }

@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +15,7 @@ import { TweetComponent } from './tweet/tweet.component';
     TweetComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,42 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "user": "stevie",
+      "name": "Stevie Feliciano",
+      "body": "Stevie Feliciano is a library scientist living in New York City. She likes to spend her time reading, running, and writing.",
+      "likes": [],
+      "avatar": "../assets/images/avatar/stevie.jpg"
+    },
+    {
+      "id": 2,
+      "user": "veronika",
+      "name": "Veronika Ossi",
+      "body": "Veronika Ossi is a set designer living in New York who enjoys kittens, music, and partying.",
+      "likes": [
+        "jenny",
+        "stevie"
+      ],
+      "avatar": "../assets/images/avatar/veronika.jpg"
+    },
+    {
+      "id": 3,
+      "user": "jenny",
+      "name": "Jenny Hess",
+      "body": "Jenny is a student studying Media Management at the New School.",
+      "likes": [
+        "stevie",
+        "stevie"
+      ],
+      "avatar": "../assets/images/avatar/jenny.jpg"
+    },
+    {
+      "id": 4,
+      "user": "renan",
+      "name": "Renan Azzolim",
+      "body": "Renan Azzolim is a library scientist living in New York City. She likes to spend her time reading, running, and writing.",
+      "likes": [],
+      "avatar": "../assets/images/avatar/renan.jpg"
+    }
+  ]
+}
